@@ -37,7 +37,7 @@ public class GameRealization {
      * Start of robot's moving (with all checking instances from GameCheckerFactory)
      */
     public void next() {
-        if(GameCheckerFactory.isWinner(gamePanel.getPanelsArray(), players.getLeft().getMyChoice(), gamePanel.getAreaSize())) {
+        if(GameCheckerFactory.isWinner(gamePanel.getPanelsArray(), players.getLeft().getMyChoice(), gamePanel.getAreaSize(), 3)) {
             gamePanel.winnerInform();
             return;
         }
@@ -46,7 +46,7 @@ public class GameRealization {
             return;
         }
         players.getRight().makeMove();
-        if(GameCheckerFactory.isWinner(gamePanel.getPanelsArray(), players.getRight().getMyChoice(), gamePanel.getAreaSize())) {
+        if(GameCheckerFactory.isWinner(gamePanel.getPanelsArray(), players.getRight().getMyChoice(), gamePanel.getAreaSize(), 3)) {
             gamePanel.loseInform();
             return;
         }
